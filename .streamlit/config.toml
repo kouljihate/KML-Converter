@@ -1,0 +1,17 @@
+[server]
+enableStaticServing = true
+
+[theme]
+base = "dark"
+primaryColor = "#432818"
+backgroundColor = "#bb9457"
+secondaryBackgroundColor = "#ffe6a7"
+textColor = "#6f1d1b"
+font = "Comfortaa"
+codeFont = "monospace"
+
+[[theme.fontFaces]]
+family = "Comfortaa"
+url = "app/static/fonts/Comfortaa-Regular.ttf"
+style = "normal"
+weight = "300 700"

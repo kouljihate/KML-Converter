@@ -1,0 +1,450 @@
+/* ==========================================================
+   KML / KMZ Converter
+   Local Lumen-based Streamlit application styling
+   Font: static/fonts/Comfortaa-VariableFont_wght.ttf
+   ========================================================== */
+
+
+/* ----------------------------------------------------------
+   Local font
+   ---------------------------------------------------------- */
+
+@font-face {
+    font-family: "Comfortaa";
+    src: url("/app/static/fonts/Comfortaa-Regular.ttf")
+         format("truetype");
+    font-style: normal;
+    font-weight: 300 700;
+    font-display: swap;
+}
+
+
+/* ----------------------------------------------------------
+   Theme variables
+   ---------------------------------------------------------- */
+
+:root {
+    --app-font: "Comfortaa", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+
+    --app-primary: #c2c5aa;
+    --app-primary-hover: #0d6e93;
+    --app-success: #28a745;
+    --app-danger: #dc3545;
+    --app-warning: #ffc107;
+
+    --app-text: #343a40;
+    --app-muted: #6c757d;
+    --app-background: #99582a;
+    --app-surface: #dad7cd;
+    --app-border: #dfe4ea;
+    --app-sidebar: #936639;
+
+    --footer-height: 68px;
+}
+
+
+/* ----------------------------------------------------------
+   Global page
+   ---------------------------------------------------------- */
+
+html,
+body,
+[data-testid="stAppViewContainer"],
+.stApp {
+    font-family: var(--app-font) !important;
+    background-color: var(--app-background) !important;
+    color: var(--app-text) !important;
+}
+
+.stApp *,
+.stApp button,
+.stApp input,
+.stApp textarea,
+.stApp select {
+    font-family: var(--app-font) !important;
+}
+
+.block-container {
+    max-width: 1440px;
+    padding-top: 1.75rem;
+    padding-bottom: calc(var(--footer-height) + 2rem);
+}
+
+
+/* ----------------------------------------------------------
+   Headings and text
+   ---------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--app-font) !important;
+    color: var(--app-text) !important;
+    font-weight: 700 !important;
+}
+
+h1 {
+    color: var(--app-primary) !important;
+    font-size: clamp(1.7rem, 3vw, 2.5rem) !important;
+    margin-bottom: 1.25rem !important;
+}
+
+p,
+label,
+[data-testid="stMarkdownContainer"],
+[data-testid="stCaptionContainer"] {
+    font-family: var(--app-font) !important;
+}
+
+
+/* ----------------------------------------------------------
+   Sidebar
+   ---------------------------------------------------------- */
+
+section[data-testid="stSidebar"] {
+    background-color: var(--app-sidebar) !important;
+    border-right: 1px solid var(--app-border) !important;
+}
+
+section[data-testid="stSidebar"] > div:first-child {
+    padding-top: 1rem;
+}
+
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3 {
+    color: var(--app-primary) !important;
+}
+
+
+/* ----------------------------------------------------------
+   File uploader
+   ---------------------------------------------------------- */
+
+[data-testid="stFileUploaderDropzone"] {
+    background-color: var(--app-surface) !important;
+    border: 2px dashed var(--app-primary) !important;
+    border-radius: 0.6rem !important;
+    padding: 1.2rem !important;
+}
+
+[data-testid="stFileUploaderDropzone"]:hover {
+    background-color: #eef9fd !important;
+    border-color: var(--app-primary-hover) !important;
+}
+
+/* Hide the original Streamlit button text safely */
+[data-testid="stFileUploaderDropzone"] button {
+    position: relative !important;
+    min-width: 230px !important;
+    min-height: 44px !important;
+    padding: 0 1.25rem !important;
+    overflow: hidden !important;
+
+    background-color: var(--app-primary) !important;
+    border: 1px solid var(--app-primary) !important;
+    border-radius: 0.375rem !important;
+
+    color: transparent !important;
+    font-size: 0 !important;
+    text-shadow: none !important;
+}
+
+/* Hide nested original label elements */
+[data-testid="stFileUploaderDropzone"] button span,
+[data-testid="stFileUploaderDropzone"] button div,
+[data-testid="stFileUploaderDropzone"] button p {
+    color: transparent !important;
+    font-size: 0 !important;
+}
+
+/* Show custom button label */
+[data-testid="stFileUploaderDropzone"] button::before {
+    content: "Choose KML / KMZ file";
+    position: absolute !important;
+    inset: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    color: #ffffff !important;
+    font-family: var(--app-font) !important;
+    font-size: 0.83rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+
+    pointer-events: none !important;
+}
+
+[data-testid="stFileUploaderDropzone"] button:hover {
+    background-color: var(--app-primary-hover) !important;
+    border-color: var(--app-primary-hover) !important;
+}
+
+[data-testid="stFileUploaderDropzone"] button:focus-visible {
+    outline: 3px solid rgba(21, 140, 186, 0.35) !important;
+    outline-offset: 2px !important;
+}
+
+
+/* ----------------------------------------------------------
+   Standard buttons and download buttons
+   ---------------------------------------------------------- */
+
+.stButton > button,
+.stDownloadButton > button {
+    min-height: 42px !important;
+    border-radius: 0.375rem !important;
+    font-family: var(--app-font) !important;
+    font-size: 0.84rem !important;
+    font-weight: 700 !important;
+    transition: background-color 0.18s ease, border-color 0.18s ease,
+        box-shadow 0.18s ease, transform 0.18s ease !important;
+}
+
+/* Normal Streamlit buttons */
+.stButton > button {
+    color: var(--app-primary) !important;
+    background-color: #ffffff !important;
+    border: 1px solid var(--app-primary) !important;
+}
+
+.stButton > button:hover {
+    color: #ffffff !important;
+    background-color: var(--app-primary) !important;
+    border-color: var(--app-primary) !important;
+}
+
+/* GeoJSON / GeoTIFF download buttons */
+.stDownloadButton > button {
+    color: #ffffff !important;
+    background-color: var(--app-primary) !important;
+    border: 1px solid var(--app-primary) !important;
+}
+
+.stDownloadButton > button:hover {
+    color: #ffffff !important;
+    background-color: var(--app-primary-hover) !important;
+    border-color: var(--app-primary-hover) !important;
+    box-shadow: 0 0.35rem 0.8rem rgba(21, 140, 186, 0.22) !important;
+    transform: translateY(-1px) !important;
+}
+
+
+/* ----------------------------------------------------------
+   Inputs, number controls and text fields
+   ---------------------------------------------------------- */
+
+[data-testid="stTextInput"] input,
+[data-testid="stNumberInput"] input,
+[data-testid="stTextArea"] textarea {
+    color: var(--app-text) !important;
+    background-color: #ffffff !important;
+    border: 1px solid #ced4da !important;
+    border-radius: 0.375rem !important;
+    font-family: var(--app-font) !important;
+}
+
+[data-testid="stTextInput"] input:focus,
+[data-testid="stNumberInput"] input:focus,
+[data-testid="stTextArea"] textarea:focus {
+    border-color: var(--app-primary) !important;
+    box-shadow: 0 0 0 0.2rem rgba(21, 140, 186, 0.18) !important;
+}
+
+
+/* ----------------------------------------------------------
+   Checkbox
+   ---------------------------------------------------------- */
+
+[data-testid="stCheckbox"] label {
+    font-family: var(--app-font) !important;
+}
+
+
+/* ----------------------------------------------------------
+   DataFrame and metrics
+   ---------------------------------------------------------- */
+
+[data-testid="stDataFrame"] {
+    border: 1px solid var(--app-border) !important;
+    border-radius: 0.5rem !important;
+    overflow: hidden !important;
+    background-color: var(--app-surface) !important;
+}
+
+[data-testid="stMetric"] {
+    padding: 1rem !important;
+    background-color: var(--app-surface) !important;
+    border: 1px solid var(--app-border) !important;
+    border-radius: 0.5rem !important;
+}
+
+[data-testid="stMetricLabel"],
+[data-testid="stMetricValue"] {
+    font-family: var(--app-font) !important;
+}
+
+
+/* ----------------------------------------------------------
+   Alerts: info, success, warning and error
+   ---------------------------------------------------------- */
+
+[data-testid="stAlert"] {
+    border-radius: 0.5rem !important;
+    font-family: var(--app-font) !important;
+}
+
+[data-testid="stAlert"] p {
+    font-family: var(--app-font) !important;
+}
+
+
+/* ----------------------------------------------------------
+   Folium map
+   ---------------------------------------------------------- */
+
+iframe[title="streamlit_folium.st_folium"] {
+    width: 100% !important;
+    border: 1px solid var(--app-border) !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.08) !important;
+}
+
+
+/* ----------------------------------------------------------
+   Separators
+   ---------------------------------------------------------- */
+
+hr {
+    border: 0 !important;
+    border-top: 1px solid var(--app-border) !important;
+    margin: 1.75rem 0 !important;
+}
+
+
+/* ==========================================================
+   Fixed footer — overlays both main content and sidebar
+   ========================================================== */
+
+.footer-page-spacer {
+    display: block;
+    height: 90px;
+}
+
+/* Footer spans the entire browser viewport, including sidebar */
+.fixed-app-footer {
+    position: fixed !important;
+
+    /* Browser viewport, not Streamlit's content column */
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    /* Higher than Streamlit sidebar, header and widget layers */
+    z-index: 2147483647 !important;
+
+    min-height: 68px !important;
+    padding: 0.8rem 2rem !important;
+    box-sizing: border-box !important;
+
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    align-items: center !important;
+
+    background: #936639 !important;
+    border-top: 1px solid #dfe4ea !important;
+    box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.14) !important;
+
+    color: #ffffff !important;
+    font-family: "Comfortaa", system-ui, sans-serif !important;
+    font-size: 0.74rem !important;
+
+    isolation: isolate !important;
+}
+
+.fixed-footer-col {
+    font-family: "Comfortaa", system-ui, sans-serif !important;
+    line-height: 1.5 !important;
+}
+
+.fixed-footer-left {
+    text-align: left !important;
+}
+
+.fixed-footer-center {
+    text-align: center !important;
+}
+
+.fixed-footer-right {
+    text-align: right !important;
+    white-space: nowrap !important;
+    font-weight: 700 !important;
+    color: #343a40 !important;
+}
+
+.fixed-footer-left strong {
+    color: #158cba !important;
+    font-weight: 700 !important;
+}
+
+.footer-separator {
+    color: #adb5bd !important;
+    padding: 0 0.45rem !important;
+}
+
+/* Responsive footer */
+@media (max-width: 760px) {
+    .footer-page-spacer {
+        height: 120px;
+    }
+
+    .fixed-app-footer {
+        min-height: 108px !important;
+        grid-template-columns: 1fr !important;
+        row-gap: 0.25rem !important;
+        padding: 0.55rem 1rem !important;
+    }
+
+    .fixed-footer-left,
+    .fixed-footer-center,
+    .fixed-footer-right {
+        text-align: center !important;
+    }
+}
+/* ----------------------------------------------------------
+   Responsive footer
+   ---------------------------------------------------------- */
+
+@media (max-width: 760px) {
+    :root {
+        --footer-height: 116px;
+    }
+
+    .block-container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    .fixed-app-footer {
+        grid-template-columns: 1fr !important;
+        row-gap: 0.25rem !important;
+        padding: 0.55rem 1rem !important;
+        text-align: center !important;
+    }
+
+    .fixed-footer-left,
+    .fixed-footer-center,
+    .fixed-footer-right {
+        text-align: center !important;
+    }
+
+    [data-testid="stFileUploaderDropzone"] button {
+        width: 100% !important;
+    }
+}

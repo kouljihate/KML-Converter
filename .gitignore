@@ -1,0 +1,35 @@
+# Python virtual environments
+venv/
+.venv/
+env/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Streamlit cache / credentials
+.streamlit/secrets.toml
+
+# Local IDE configuration
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Test / coverage output
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Generated GIS output files
+*.tif
+*.tiff
+*.geojson
+
+# Temporary files
+*.tmp
+*.log
+*.zip
